@@ -3,14 +3,19 @@
 //  RestToolbox
 //
 //  Created by Matt Jarjoura on 1/24/13.
-//
+//  Copyright (c) 2013 Artcator Inc. All rights reserved.
 //
 
+#include "pch.h"
+#include <algorithm>
 #include "TaskRunner.h"
 #if defined(APPLE)
 #include <dispatch/dispatch.h>
 #include <Block.h>
 #include <CoreFoundation/CFRunLoop.h>
+#elif defined(WIN32)
+using namespace Windows::Foundation;
+using namespace Windows::System::Threading;
 #endif
 
 using namespace RestToolbox::Models;
@@ -37,5 +42,20 @@ void TaskRunner::RunDelayedTask(uint64_t delay, std::function<void ()> task)
         taskBlock();
         Block_release(taskBlock);
     });
+#elif defined(WIN32)
+    TimeSpan popTime;
+    popTime.Duration = delay * 10000000;
+
+    try
+    {
+        _delayedTask = ThreadPoolTimer::CreateTimer(ref new TimerElapsedHandler([task] (ThreadPoolTimer ^timer) {
+            task();
+        }), popTime);
+		
+    }
+    catch (Platform::Exception ^ex)
+    {
+        
+    }
 #endif
 }

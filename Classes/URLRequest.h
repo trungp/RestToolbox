@@ -43,6 +43,7 @@ namespace RestToolbox
 #elif defined(WIN32)
             
 #endif
+            const double _timeout;
             const BasicUri &_uri;
         };
     }

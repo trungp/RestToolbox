@@ -34,6 +34,10 @@
 #define _SQLITE3_H_
 #include <stdarg.h>     /* Needed for the definition of va_list */
 
+#if defined(WIN32)
+#include <Windows.h>
+#endif
+
 /*
 ** Make sure we can call this stuff from C++.
 */

@@ -10,6 +10,10 @@
 
 #include <iostream>
 
+#if defined(WIN32)
+typedef unsigned __int64 uint64_t;
+#endif
+
 namespace RestToolbox
 {
     namespace Models

@@ -27,6 +27,8 @@ namespace RestToolbox
             
 #if defined(APPLE)
             operator CFURLRef() const;
+#elif defined(WIN32)
+            operator Windows::Foundation::Uri^() const;
 #endif
             
         private:

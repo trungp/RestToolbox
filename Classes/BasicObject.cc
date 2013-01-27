@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Artcator Inc. All rights reserved.
 //
 
+#include "pch.h"
 #include "BasicObject.h"
 
 using namespace RestToolbox::Models;
