@@ -6,14 +6,170 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A45EBD2316B1D06600D2ADC9 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A45EBD1F16B1D06600D2ADC9 /* sqlite3.c */; };
+		A45EBD2416B1D06600D2ADC9 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2016B1D06600D2ADC9 /* sqlite3.h */; };
+		A45EBD2516B1D06600D2ADC9 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2116B1D06600D2ADC9 /* sqlite3ext.h */; };
+		A45EBD2716B1D07700D2ADC9 /* RestToolbox-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2616B1D07700D2ADC9 /* RestToolbox-Prefix.pch */; };
+		A495795B16B1D3100032356B /* BasicObject.cp in Sources */ = {isa = PBXBuildFile; fileRef = A495795916B1D3100032356B /* BasicObject.cp */; };
+		A495795C16B1D3100032356B /* BasicObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A495795A16B1D3100032356B /* BasicObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A495796D16B1D6770032356B /* json-forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = A495796A16B1D6770032356B /* json-forwards.h */; };
+		A495796E16B1D6770032356B /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = A495796B16B1D6770032356B /* json.h */; };
+		A495796F16B1D6770032356B /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A495796C16B1D6770032356B /* jsoncpp.cpp */; };
+		A495797216B1DA090032356B /* URLRequest_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A495797016B1DA090032356B /* URLRequest_mac.mm */; };
+		A495797316B1DA090032356B /* URLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = A495797116B1DA090032356B /* URLRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A495797616B1E05B0032356B /* TaskRunner.cp in Sources */ = {isa = PBXBuildFile; fileRef = A495797416B1E05B0032356B /* TaskRunner.cp */; };
+		A495797716B1E05B0032356B /* TaskRunner.h in Headers */ = {isa = PBXBuildFile; fileRef = A495797516B1E05B0032356B /* TaskRunner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A495798416B1F3020032356B /* BasicUri.cp in Sources */ = {isa = PBXBuildFile; fileRef = A495798216B1F3020032356B /* BasicUri.cp */; };
+		A495798516B1F3020032356B /* BasicUri.h in Headers */ = {isa = PBXBuildFile; fileRef = A495798316B1F3020032356B /* BasicUri.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A45EBD0E16B1CFF800D2ADC9 /* RestToolbox.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = RestToolbox.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A45EBD1F16B1D06600D2ADC9 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		A45EBD2016B1D06600D2ADC9 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		A45EBD2116B1D06600D2ADC9 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		A45EBD2616B1D07700D2ADC9 /* RestToolbox-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RestToolbox-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Base_RestToolbox.xcconfig; path = Configuration/Base_RestToolbox.xcconfig; sourceTree = SOURCE_ROOT; };
+		A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug_RestToolbox.xcconfig; path = Configuration/Debug_RestToolbox.xcconfig; sourceTree = SOURCE_ROOT; };
+		A495795916B1D3100032356B /* BasicObject.cp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicObject.cp; path = Classes/BasicObject.cp; sourceTree = SOURCE_ROOT; };
+		A495795A16B1D3100032356B /* BasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicObject.h; path = Classes/BasicObject.h; sourceTree = SOURCE_ROOT; };
+		A495796A16B1D6770032356B /* json-forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
+		A495796B16B1D6770032356B /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		A495796C16B1D6770032356B /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jsoncpp.cpp; path = Classes/jsoncpp/jsoncpp.cpp; sourceTree = SOURCE_ROOT; };
+		A495797016B1DA090032356B /* URLRequest_mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = URLRequest_mac.mm; path = Classes/URLRequest_mac.mm; sourceTree = SOURCE_ROOT; };
+		A495797116B1DA090032356B /* URLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLRequest.h; path = Classes/URLRequest.h; sourceTree = SOURCE_ROOT; };
+		A495797416B1E05B0032356B /* TaskRunner.cp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TaskRunner.cp; path = Classes/TaskRunner.cp; sourceTree = SOURCE_ROOT; };
+		A495797516B1E05B0032356B /* TaskRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskRunner.h; path = Classes/TaskRunner.h; sourceTree = SOURCE_ROOT; };
+		A495798216B1F3020032356B /* BasicUri.cp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicUri.cp; path = Classes/BasicUri.cp; sourceTree = SOURCE_ROOT; };
+		A495798316B1F3020032356B /* BasicUri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicUri.h; path = Classes/BasicUri.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A45EBD0B16B1CFF800D2ADC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		A45EBCFE16B1CCCA00D2ADC9 = {
 			isa = PBXGroup;
 			children = (
+				A45EBD1016B1CFF800D2ADC9 /* RestToolbox */,
+				A45EBD0F16B1CFF800D2ADC9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		A45EBD0F16B1CFF800D2ADC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A45EBD0E16B1CFF800D2ADC9 /* RestToolbox.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A45EBD1016B1CFF800D2ADC9 /* RestToolbox */ = {
+			isa = PBXGroup;
+			children = (
+				A495796816B1D6080032356B /* jsoncpp */,
+				A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */,
+				A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */,
+				A495795916B1D3100032356B /* BasicObject.cp */,
+				A495795A16B1D3100032356B /* BasicObject.h */,
+				A495798216B1F3020032356B /* BasicUri.cp */,
+				A495798316B1F3020032356B /* BasicUri.h */,
+				A495797416B1E05B0032356B /* TaskRunner.cp */,
+				A495797516B1E05B0032356B /* TaskRunner.h */,
+				A495797016B1DA090032356B /* URLRequest_mac.mm */,
+				A495797116B1DA090032356B /* URLRequest.h */,
+				A45EBD1D16B1D06600D2ADC9 /* SQLite3 */,
+				A45EBD1116B1CFF800D2ADC9 /* Supporting Files */,
+			);
+			path = RestToolbox;
+			sourceTree = "<group>";
+		};
+		A45EBD1116B1CFF800D2ADC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A45EBD2616B1D07700D2ADC9 /* RestToolbox-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A45EBD1D16B1D06600D2ADC9 /* SQLite3 */ = {
+			isa = PBXGroup;
+			children = (
+				A45EBD1F16B1D06600D2ADC9 /* sqlite3.c */,
+				A45EBD2016B1D06600D2ADC9 /* sqlite3.h */,
+				A45EBD2116B1D06600D2ADC9 /* sqlite3ext.h */,
+			);
+			name = SQLite3;
+			path = Classes/SQLite3;
+			sourceTree = SOURCE_ROOT;
+		};
+		A495796816B1D6080032356B /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				A495796916B1D6770032356B /* json */,
+				A495796C16B1D6770032356B /* jsoncpp.cpp */,
+			);
+			name = jsoncpp;
+			sourceTree = "<group>";
+		};
+		A495796916B1D6770032356B /* json */ = {
+			isa = PBXGroup;
+			children = (
+				A495796A16B1D6770032356B /* json-forwards.h */,
+				A495796B16B1D6770032356B /* json.h */,
+			);
+			name = json;
+			path = Classes/jsoncpp/json;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A45EBD0C16B1CFF800D2ADC9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A495795C16B1D3100032356B /* BasicObject.h in Headers */,
+				A495797316B1DA090032356B /* URLRequest.h in Headers */,
+				A495797716B1E05B0032356B /* TaskRunner.h in Headers */,
+				A495798516B1F3020032356B /* BasicUri.h in Headers */,
+				A45EBD2416B1D06600D2ADC9 /* sqlite3.h in Headers */,
+				A45EBD2516B1D06600D2ADC9 /* sqlite3ext.h in Headers */,
+				A45EBD2716B1D07700D2ADC9 /* RestToolbox-Prefix.pch in Headers */,
+				A495796D16B1D6770032356B /* json-forwards.h in Headers */,
+				A495796E16B1D6770032356B /* json.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A45EBD0D16B1CFF800D2ADC9 /* RestToolbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A45EBD1B16B1CFF800D2ADC9 /* Build configuration list for PBXNativeTarget "RestToolbox" */;
+			buildPhases = (
+				A45EBD0A16B1CFF800D2ADC9 /* Sources */,
+				A45EBD0B16B1CFF800D2ADC9 /* Frameworks */,
+				A45EBD0C16B1CFF800D2ADC9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RestToolbox;
+			productName = RestToolbox;
+			productReference = A45EBD0E16B1CFF800D2ADC9 /* RestToolbox.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A45EBD0016B1CCCA00D2ADC9 /* Project object */ = {
@@ -29,23 +185,92 @@
 				en,
 			);
 			mainGroup = A45EBCFE16B1CCCA00D2ADC9;
+			productRefGroup = A45EBD0F16B1CFF800D2ADC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				A45EBD0D16B1CFF800D2ADC9 /* RestToolbox */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXSourcesBuildPhase section */
+		A45EBD0A16B1CFF800D2ADC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A45EBD2316B1D06600D2ADC9 /* sqlite3.c in Sources */,
+				A495795B16B1D3100032356B /* BasicObject.cp in Sources */,
+				A495796F16B1D6770032356B /* jsoncpp.cpp in Sources */,
+				A495797216B1DA090032356B /* URLRequest_mac.mm in Sources */,
+				A495797616B1E05B0032356B /* TaskRunner.cp in Sources */,
+				A495798416B1F3020032356B /* BasicUri.cp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
 		A45EBD0516B1CCCA00D2ADC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		A45EBD0616B1CCCA00D2ADC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */;
 			buildSettings = {
+			};
+			name = Release;
+		};
+		A45EBD1916B1CFF800D2ADC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestToolbox-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = Classes/jsoncpp;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A45EBD1A16B1CFF800D2ADC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RestToolbox-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = Classes/jsoncpp;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -57,6 +282,15 @@
 			buildConfigurations = (
 				A45EBD0516B1CCCA00D2ADC9 /* Debug */,
 				A45EBD0616B1CCCA00D2ADC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A45EBD1B16B1CFF800D2ADC9 /* Build configuration list for PBXNativeTarget "RestToolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A45EBD1916B1CFF800D2ADC9 /* Debug */,
+				A45EBD1A16B1CFF800D2ADC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

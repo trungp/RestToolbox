@@ -1,0 +1,13 @@
+//
+//  Base_RestToolbox.xcconfig
+//  RestToolbox
+//
+//  Created by Matt Jarjoura on 1/24/13.
+//
+//
+
+//:configuration = Release
+CLANG_CXX_LANGUAGE_STANDARD = c++0x
+CLANG_CXX_LIBRARY = libc++
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) APPLE=1 JSON_IS_AMALGAMATION=1

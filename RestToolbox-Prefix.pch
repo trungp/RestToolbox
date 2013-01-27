@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the 'RestToolbox' target in the 'RestToolbox' project
+//
+
+#if __cplusplus
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+
+#endif
+
+#ifdef __OBJC__
+
+#include <Foundation/Foundation.h>
+
+#endif
+
