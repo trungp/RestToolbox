@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Artcator Inc. All rights reserved.
 //
 
-#include "pch.h"
+//#include "pch.h"
 #include <algorithm>
 #include "TaskRunner.h"
 #if defined(APPLE)
@@ -35,7 +35,7 @@ void TaskRunner::RunDelayedTask(uint64_t delay, std::function<void ()> task)
 #if defined(APPLE)
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC);
     
-    CFRunLoopRef currentLoop = CFRunLoopGetCurrent();
+    //CFRunLoopRef currentLoop = CFRunLoopGetCurrent();
     __block dispatch_block_t taskBlock = Block_copy(^{ task(); });
     dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //CFRunLoopPerformBlock(currentLoop, kCFRunLoopDefaultMode, taskBlock);

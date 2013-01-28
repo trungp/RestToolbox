@@ -32,7 +32,7 @@ namespace RestToolbox
 #endif
             
         private:
-            const std::string &_uri;
+            const std::string _uri;
 #if defined(APPLE)
             CFURLRef _systemUri;
 #endif

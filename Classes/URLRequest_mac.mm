@@ -33,10 +33,6 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
     
     NSPort *_port;
     NSRunLoop *_runloop;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
-    NSPort *_port;
-    NSRunLoop *_runloop;
-#endif
 }
 
 - (id)initWithURLRequest:(NSURLRequest *)urlRequest inQueue:(NSOperationQueue *)queue withCompletion:(__URLRequestCompletion)completion
@@ -92,25 +88,6 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
     [_connection scheduleInRunLoop:_runloop forMode:NSRunLoopCommonModes];
     [_connection start];
     [_runloop run];
-    
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
-    // iOS 5 bug forces NSURLConnection to only work in a runloop, so schedule it in one
-    if ([UICollectionView class] == nil)
-    {
-        _port = [[NSPort alloc] init];
-        _runloop = [[NSRunLoop currentRunLoop] retain];
-        [_runloop addPort:_port forMode:NSRunLoopCommonModes];
-        [_connection scheduleInRunLoop:_runloop forMode:NSRunLoopCommonModes];
-        [_connection start];
-        [_runloop run];
-    }
-    else
-    {
-        [_connection start];
-    }
-#else
-   // [_connection start];
-#endif
 }
 
 - (BOOL)isConcurrent
@@ -122,14 +99,11 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
 {
     if (_finished != value)
     {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
         if (value == YES)
         {
             // iOS 5 bug forces NSURLConnection to only work in a runloop, so unschedule the port when finished
-            if ([UICollectionView class] == nil)
-                [_runloop removePort:_port forMode:NSRunLoopCommonModes];
+            [_runloop removePort:_port forMode:NSRunLoopCommonModes];
         }
-#endif
         [self willChangeValueForKey:@"isFinished"];
         _finished = value;
         [self didChangeValueForKey:@"isFinished"];
@@ -205,7 +179,7 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
 
 using namespace RestToolbox::Models;
 
-URLRequest::URLRequest(const BasicUri & uri, const std::string & method, const double timeout) : _uri(uri)
+URLRequest::URLRequest(const BasicUri & uri, const std::string & method, const double timeout) : _uri(uri), _timeout(timeout)
 {
     _queue = [[NSOperationQueue alloc] init];
     
@@ -237,12 +211,10 @@ void URLRequest::Start()
         
         reader.parse(document, root);
         
-        for (std::string member : root.Members)
+        for (std::string member : root.getMemberNames())
         {
-            
+            std::cout << member << std::endl;
         }
-        
-        std::cout << "test" << std::endl;
         
         [stringData release];
     }];
