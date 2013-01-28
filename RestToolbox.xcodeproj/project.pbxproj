@@ -21,6 +21,33 @@
 		A45EBD2416B1D06600D2ADC9 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2016B1D06600D2ADC9 /* sqlite3.h */; };
 		A45EBD2516B1D06600D2ADC9 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2116B1D06600D2ADC9 /* sqlite3ext.h */; };
 		A45EBD2716B1D07700D2ADC9 /* RestToolbox-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2616B1D07700D2ADC9 /* RestToolbox-Prefix.pch */; };
+		A476E91B16B726AE00BBBCD2 /* BasicApplication.cc in Sources */ = {isa = PBXBuildFile; fileRef = A476E91916B726AE00BBBCD2 /* BasicApplication.cc */; };
+		A476E91C16B726AE00BBBCD2 /* BasicApplication.cc in Sources */ = {isa = PBXBuildFile; fileRef = A476E91916B726AE00BBBCD2 /* BasicApplication.cc */; };
+		A476E91D16B726AE00BBBCD2 /* BasicApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E91A16B726AE00BBBCD2 /* BasicApplication.h */; };
+		A476E93A16B729E900BBBCD2 /* SqlCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92716B729E900BBBCD2 /* SqlCommon.cpp */; };
+		A476E93B16B729E900BBBCD2 /* SqlCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92716B729E900BBBCD2 /* SqlCommon.cpp */; };
+		A476E93C16B729E900BBBCD2 /* SqlCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E92816B729E900BBBCD2 /* SqlCommon.h */; };
+		A476E93D16B729E900BBBCD2 /* SqlDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92916B729E900BBBCD2 /* SqlDatabase.cpp */; };
+		A476E93E16B729E900BBBCD2 /* SqlDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92916B729E900BBBCD2 /* SqlDatabase.cpp */; };
+		A476E93F16B729E900BBBCD2 /* SqlDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E92A16B729E900BBBCD2 /* SqlDatabase.h */; };
+		A476E94016B729E900BBBCD2 /* SqlField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92B16B729E900BBBCD2 /* SqlField.cpp */; };
+		A476E94116B729E900BBBCD2 /* SqlField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92B16B729E900BBBCD2 /* SqlField.cpp */; };
+		A476E94216B729E900BBBCD2 /* SqlField.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E92C16B729E900BBBCD2 /* SqlField.h */; };
+		A476E94316B729E900BBBCD2 /* SqlFieldSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92D16B729E900BBBCD2 /* SqlFieldSet.cpp */; };
+		A476E94416B729E900BBBCD2 /* SqlFieldSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92D16B729E900BBBCD2 /* SqlFieldSet.cpp */; };
+		A476E94516B729E900BBBCD2 /* SqlFieldSet.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E92E16B729E900BBBCD2 /* SqlFieldSet.h */; };
+		A476E94616B729E900BBBCD2 /* SqlRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92F16B729E900BBBCD2 /* SqlRecord.cpp */; };
+		A476E94716B729E900BBBCD2 /* SqlRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E92F16B729E900BBBCD2 /* SqlRecord.cpp */; };
+		A476E94816B729E900BBBCD2 /* SqlRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E93016B729E900BBBCD2 /* SqlRecord.h */; };
+		A476E94916B729E900BBBCD2 /* SqlRecordSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93116B729E900BBBCD2 /* SqlRecordSet.cpp */; };
+		A476E94A16B729E900BBBCD2 /* SqlRecordSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93116B729E900BBBCD2 /* SqlRecordSet.cpp */; };
+		A476E94B16B729E900BBBCD2 /* SqlRecordSet.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E93216B729E900BBBCD2 /* SqlRecordSet.h */; };
+		A476E94C16B729E900BBBCD2 /* SqlTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93316B729E900BBBCD2 /* SqlTable.cpp */; };
+		A476E94D16B729E900BBBCD2 /* SqlTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93316B729E900BBBCD2 /* SqlTable.cpp */; };
+		A476E94E16B729E900BBBCD2 /* SqlTable.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E93416B729E900BBBCD2 /* SqlTable.h */; };
+		A476E94F16B729E900BBBCD2 /* SqlValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93516B729E900BBBCD2 /* SqlValue.cpp */; };
+		A476E95016B729E900BBBCD2 /* SqlValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93516B729E900BBBCD2 /* SqlValue.cpp */; };
+		A476E95116B729E900BBBCD2 /* SqlValue.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E93616B729E900BBBCD2 /* SqlValue.h */; };
 		A495795C16B1D3100032356B /* BasicObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A495795A16B1D3100032356B /* BasicObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A495796D16B1D6770032356B /* json-forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = A495796A16B1D6770032356B /* json-forwards.h */; };
 		A495796E16B1D6770032356B /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = A495796B16B1D6770032356B /* json.h */; };
@@ -56,6 +83,30 @@
 		A45EBD2616B1D07700D2ADC9 /* RestToolbox-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RestToolbox-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Base_RestToolbox.xcconfig; path = Configuration/Base_RestToolbox.xcconfig; sourceTree = SOURCE_ROOT; };
 		A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug_RestToolbox.xcconfig; path = Configuration/Debug_RestToolbox.xcconfig; sourceTree = SOURCE_ROOT; };
+		A476E91916B726AE00BBBCD2 /* BasicApplication.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicApplication.cc; path = Classes/BasicApplication.cc; sourceTree = SOURCE_ROOT; };
+		A476E91A16B726AE00BBBCD2 /* BasicApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicApplication.h; path = Classes/BasicApplication.h; sourceTree = SOURCE_ROOT; };
+		A476E91E16B728E900BBBCD2 /* LICENSES.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSES.md; sourceTree = "<group>"; };
+		A476E91F16B728F100BBBCD2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A476E92116B729E900BBBCD2 /* _AUTHOR.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _AUTHOR.TXT; sourceTree = "<group>"; };
+		A476E92216B729E900BBBCD2 /* _LICENSE.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _LICENSE.TXT; sourceTree = "<group>"; };
+		A476E92316B729E900BBBCD2 /* _ReadMe.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = _ReadMe.html; sourceTree = "<group>"; };
+		A476E92416B729E900BBBCD2 /* _VERSION.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _VERSION.TXT; sourceTree = "<group>"; };
+		A476E92716B729E900BBBCD2 /* SqlCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlCommon.cpp; sourceTree = "<group>"; };
+		A476E92816B729E900BBBCD2 /* SqlCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlCommon.h; sourceTree = "<group>"; };
+		A476E92916B729E900BBBCD2 /* SqlDatabase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlDatabase.cpp; sourceTree = "<group>"; };
+		A476E92A16B729E900BBBCD2 /* SqlDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlDatabase.h; sourceTree = "<group>"; };
+		A476E92B16B729E900BBBCD2 /* SqlField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlField.cpp; sourceTree = "<group>"; };
+		A476E92C16B729E900BBBCD2 /* SqlField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlField.h; sourceTree = "<group>"; };
+		A476E92D16B729E900BBBCD2 /* SqlFieldSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlFieldSet.cpp; sourceTree = "<group>"; };
+		A476E92E16B729E900BBBCD2 /* SqlFieldSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlFieldSet.h; sourceTree = "<group>"; };
+		A476E92F16B729E900BBBCD2 /* SqlRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlRecord.cpp; sourceTree = "<group>"; };
+		A476E93016B729E900BBBCD2 /* SqlRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlRecord.h; sourceTree = "<group>"; };
+		A476E93116B729E900BBBCD2 /* SqlRecordSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlRecordSet.cpp; sourceTree = "<group>"; };
+		A476E93216B729E900BBBCD2 /* SqlRecordSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlRecordSet.h; sourceTree = "<group>"; };
+		A476E93316B729E900BBBCD2 /* SqlTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlTable.cpp; sourceTree = "<group>"; };
+		A476E93416B729E900BBBCD2 /* SqlTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlTable.h; sourceTree = "<group>"; };
+		A476E93516B729E900BBBCD2 /* SqlValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlValue.cpp; sourceTree = "<group>"; };
+		A476E93616B729E900BBBCD2 /* SqlValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlValue.h; sourceTree = "<group>"; };
 		A495795A16B1D3100032356B /* BasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicObject.h; path = Classes/BasicObject.h; sourceTree = SOURCE_ROOT; };
 		A495796A16B1D6770032356B /* json-forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
 		A495796B16B1D6770032356B /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
@@ -96,6 +147,8 @@
 		A45EBCFE16B1CCCA00D2ADC9 = {
 			isa = PBXGroup;
 			children = (
+				A476E91F16B728F100BBBCD2 /* README.md */,
+				A476E91E16B728E900BBBCD2 /* LICENSES.md */,
 				A45EBD1016B1CFF800D2ADC9 /* RestToolbox */,
 				A4136F6516B6477200DEC918 /* Frameworks */,
 				A45EBD0F16B1CFF800D2ADC9 /* Products */,
@@ -117,6 +170,8 @@
 				A495796816B1D6080032356B /* jsoncpp */,
 				A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */,
 				A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */,
+				A476E91916B726AE00BBBCD2 /* BasicApplication.cc */,
+				A476E91A16B726AE00BBBCD2 /* BasicApplication.h */,
 				A4136F7316B647A500DEC918 /* BasicObject.cc */,
 				A495795A16B1D3100032356B /* BasicObject.h */,
 				A4136F7416B647A500DEC918 /* BasicUri.cc */,
@@ -125,6 +180,7 @@
 				A495797516B1E05B0032356B /* TaskRunner.h */,
 				A495797016B1DA090032356B /* URLRequest_mac.mm */,
 				A495797116B1DA090032356B /* URLRequest.h */,
+				A476E92016B729E900BBBCD2 /* easySQLite */,
 				A45EBD1D16B1D06600D2ADC9 /* SQLite3 */,
 				A45EBD1116B1CFF800D2ADC9 /* Supporting Files */,
 			);
@@ -148,6 +204,34 @@
 			);
 			name = SQLite3;
 			path = Classes/SQLite3;
+			sourceTree = SOURCE_ROOT;
+		};
+		A476E92016B729E900BBBCD2 /* easySQLite */ = {
+			isa = PBXGroup;
+			children = (
+				A476E92116B729E900BBBCD2 /* _AUTHOR.TXT */,
+				A476E92216B729E900BBBCD2 /* _LICENSE.TXT */,
+				A476E92316B729E900BBBCD2 /* _ReadMe.html */,
+				A476E92416B729E900BBBCD2 /* _VERSION.TXT */,
+				A476E92716B729E900BBBCD2 /* SqlCommon.cpp */,
+				A476E92816B729E900BBBCD2 /* SqlCommon.h */,
+				A476E92916B729E900BBBCD2 /* SqlDatabase.cpp */,
+				A476E92A16B729E900BBBCD2 /* SqlDatabase.h */,
+				A476E92B16B729E900BBBCD2 /* SqlField.cpp */,
+				A476E92C16B729E900BBBCD2 /* SqlField.h */,
+				A476E92D16B729E900BBBCD2 /* SqlFieldSet.cpp */,
+				A476E92E16B729E900BBBCD2 /* SqlFieldSet.h */,
+				A476E92F16B729E900BBBCD2 /* SqlRecord.cpp */,
+				A476E93016B729E900BBBCD2 /* SqlRecord.h */,
+				A476E93116B729E900BBBCD2 /* SqlRecordSet.cpp */,
+				A476E93216B729E900BBBCD2 /* SqlRecordSet.h */,
+				A476E93316B729E900BBBCD2 /* SqlTable.cpp */,
+				A476E93416B729E900BBBCD2 /* SqlTable.h */,
+				A476E93516B729E900BBBCD2 /* SqlValue.cpp */,
+				A476E93616B729E900BBBCD2 /* SqlValue.h */,
+			);
+			name = easySQLite;
+			path = Classes/easySQLite;
 			sourceTree = SOURCE_ROOT;
 		};
 		A495796816B1D6080032356B /* jsoncpp */ = {
@@ -185,6 +269,15 @@
 				A45EBD2716B1D07700D2ADC9 /* RestToolbox-Prefix.pch in Headers */,
 				A495796D16B1D6770032356B /* json-forwards.h in Headers */,
 				A495796E16B1D6770032356B /* json.h in Headers */,
+				A476E91D16B726AE00BBBCD2 /* BasicApplication.h in Headers */,
+				A476E93C16B729E900BBBCD2 /* SqlCommon.h in Headers */,
+				A476E93F16B729E900BBBCD2 /* SqlDatabase.h in Headers */,
+				A476E94216B729E900BBBCD2 /* SqlField.h in Headers */,
+				A476E94516B729E900BBBCD2 /* SqlFieldSet.h in Headers */,
+				A476E94816B729E900BBBCD2 /* SqlRecord.h in Headers */,
+				A476E94B16B729E900BBBCD2 /* SqlRecordSet.h in Headers */,
+				A476E94E16B729E900BBBCD2 /* SqlTable.h in Headers */,
+				A476E95116B729E900BBBCD2 /* SqlValue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +355,15 @@
 				A4136F7C16B647B200DEC918 /* URLRequest_mac.mm in Sources */,
 				A4136F8B16B64A3200DEC918 /* jsoncpp.cpp in Sources */,
 				A4136F8D16B64A3E00DEC918 /* sqlite3.c in Sources */,
+				A476E91C16B726AE00BBBCD2 /* BasicApplication.cc in Sources */,
+				A476E93B16B729E900BBBCD2 /* SqlCommon.cpp in Sources */,
+				A476E93E16B729E900BBBCD2 /* SqlDatabase.cpp in Sources */,
+				A476E94116B729E900BBBCD2 /* SqlField.cpp in Sources */,
+				A476E94416B729E900BBBCD2 /* SqlFieldSet.cpp in Sources */,
+				A476E94716B729E900BBBCD2 /* SqlRecord.cpp in Sources */,
+				A476E94A16B729E900BBBCD2 /* SqlRecordSet.cpp in Sources */,
+				A476E94D16B729E900BBBCD2 /* SqlTable.cpp in Sources */,
+				A476E95016B729E900BBBCD2 /* SqlValue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +377,15 @@
 				A4136F7616B647A500DEC918 /* BasicObject.cc in Sources */,
 				A4136F7816B647A500DEC918 /* BasicUri.cc in Sources */,
 				A4136F7A16B647A500DEC918 /* TaskRunner.cc in Sources */,
+				A476E91B16B726AE00BBBCD2 /* BasicApplication.cc in Sources */,
+				A476E93A16B729E900BBBCD2 /* SqlCommon.cpp in Sources */,
+				A476E93D16B729E900BBBCD2 /* SqlDatabase.cpp in Sources */,
+				A476E94016B729E900BBBCD2 /* SqlField.cpp in Sources */,
+				A476E94316B729E900BBBCD2 /* SqlFieldSet.cpp in Sources */,
+				A476E94616B729E900BBBCD2 /* SqlRecord.cpp in Sources */,
+				A476E94916B729E900BBBCD2 /* SqlRecordSet.cpp in Sources */,
+				A476E94C16B729E900BBBCD2 /* SqlTable.cpp in Sources */,
+				A476E94F16B729E900BBBCD2 /* SqlValue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
