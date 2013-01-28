@@ -1,8 +1,13 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlRecordSet.h"
 
-
-namespace sql
-{
+using namespace RestToolbox::SQL;
 
 RecordSet::RecordSet(sqlite3* db)
 	: _fields(NULL)
@@ -155,6 +160,3 @@ Value* RecordSet::getTopRecordFirstValue()
 	return NULL;
 }
 
-
-//sql eof
-};

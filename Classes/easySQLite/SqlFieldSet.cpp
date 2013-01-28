@@ -1,8 +1,14 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlFieldSet.h"
 #include "SqlCommon.h"
 
-namespace sql
-{
+using namespace RestToolbox::SQL;
 
 FieldSet::FieldSet(Field* definition)
 {
@@ -131,5 +137,3 @@ FieldSet* FieldSet::createFromDefinition(string value)
 }
 
 
-//sql eof
-};

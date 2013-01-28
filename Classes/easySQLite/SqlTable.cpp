@@ -1,8 +1,14 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlTable.h"
 
+using namespace RestToolbox::SQL;
 
-namespace sql
-{
 
 Table::Table(sqlite3* db, string tableName, Field* definition)
 	: _db(db), _tableName(tableName), _recordset(db, definition)
@@ -307,5 +313,3 @@ bool Table::backup(Table& source)
 }
 
 
-//sql eof
-};

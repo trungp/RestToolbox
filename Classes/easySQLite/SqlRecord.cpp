@@ -1,8 +1,13 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlRecord.h"
 
-
-namespace sql
-{
+using namespace RestToolbox::SQL;
 
 Record::Record(FieldSet* fields)
 	: _fields(fields)
@@ -267,5 +272,3 @@ bool Record::equalsValues(Record* record)
 }
 
 
-//sql eof
-};

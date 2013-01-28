@@ -1,8 +1,14 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlValue.h"
 #include <stdlib.h>
 
-namespace sql
-{
+using namespace RestToolbox::SQL;
 
 Value::Value()
 {
@@ -127,9 +133,9 @@ bool Value::asBool()
 	return (_value.compare("1") == 0);
 }
 
-time Value::asTime()
+RestToolbox::SQL::time Value::asTime()
 {
-	time dt(asInteger());
+	RestToolbox::SQL::time dt(asInteger());
 	return dt;
 }
 
@@ -180,9 +186,9 @@ void Value::setBool(bool value)
 	_value = (value ? "1" : "0");
 }
 
-void Value::setTime(time value)
+void Value::setTime(RestToolbox::SQL::time value)
 {
-	time t(value);
+	RestToolbox::SQL::time t(value);
 	_isNull = false;
 	setInteger(t.asInteger());
 }
@@ -192,6 +198,3 @@ bool Value::isNull()
 	return _isNull;
 }
 
-
-//sql eof
-};

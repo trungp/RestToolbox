@@ -1,14 +1,19 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlDatabase.h"
 #include "SqlRecordset.h"
 #include <time.h>
 
-
-namespace sql
-{
+using namespace RestToolbox::SQL;
 
 Database::Database(void)
 {
-	_db = NULL;
+	_db = nullptr;
 	_result_open = SQLITE_ERROR;
 
 	close();
@@ -69,6 +74,24 @@ bool Database::open(string filename)
 	return false;
 }
 
+bool Database::transaction(std::function<void()> & commands)
+{
+    if (!transactionBegin())
+        return false;
+    
+    try
+    {
+        commands();
+    }
+    catch (Exception ex)
+    {
+        transactionRollback();
+        return false;
+    }
+    
+    return transactionCommit();
+}
+
 bool Database::transactionBegin()
 {
 	RecordSet rs(_db);
@@ -98,7 +121,3 @@ bool Database::transactionRollback()
 
 	return false;
 }
-
-
-//sql eof
-};

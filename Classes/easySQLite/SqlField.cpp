@@ -1,8 +1,13 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlField.h"
 
-
-namespace sql
-{
+using namespace RestToolbox::SQL;
 
 Field::Field(field_use use)
 {
@@ -173,6 +178,3 @@ Field* Field::createFromDefinition(string value)
 	return field;
 }
 
-
-//sql eof
-};

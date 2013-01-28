@@ -1,4 +1,5 @@
 //
+// Copyright (c) 2013 Artcator Inc.
 // Copyright (C) 2010 Piotr Zagawa
 //
 // Released under BSD License
@@ -11,36 +12,35 @@
 #include "SqlField.h"
 
 
-namespace sql
+namespace RestToolbox
 {
-
-class FieldSet
-{
-private:
-	std::vector<Field> _vec;
-	std::map<string, Field*> _map;
-
-private:
-	void copy(const std::vector<Field>& definition);
-
-public:
-	FieldSet(Field* definition);
-	FieldSet(std::vector<Field>& definition);
-	FieldSet(const FieldSet& source);
-
-public:
-	string toString();
-	int count();
-	Field* getByIndex(int index);
-	Field* getByName(string name);
-
-public:
-	string definitionHash();
-	string getDefinition();
-	static FieldSet* createFromDefinition(string value);
-
-};
-
-
-//sql eof
-};
+    namespace SQL
+    {
+        class FieldSet
+        {
+        private:
+            std::vector<Field> _vec;
+            std::map<string, Field*> _map;
+            
+        private:
+            void copy(const std::vector<Field>& definition);
+            
+        public:
+            FieldSet(Field* definition);
+            FieldSet(std::vector<Field>& definition);
+            FieldSet(const FieldSet& source);
+            
+        public:
+            string toString();
+            int count();
+            Field* getByIndex(int index);
+            Field* getByName(string name);
+            
+        public:
+            string definitionHash();
+            string getDefinition();
+            static FieldSet* createFromDefinition(string value);
+            
+        };
+    }
+}

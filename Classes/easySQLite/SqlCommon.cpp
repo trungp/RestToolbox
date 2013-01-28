@@ -1,9 +1,16 @@
+//
+// Copyright (c) 2013 Artcator Inc.
+// Copyright (C) 2010 Piotr Zagawa
+//
+// Released under BSD License
+//
+
 #include "SqlCommon.h"
 #include <sstream>
 #include <CommonCrypto/CommonCrypto.h>
 
-namespace sql
-{
+using namespace RestToolbox::SQL;
+
 time::time()
 {
 	if (::time(&_value) == -1)
@@ -20,7 +27,7 @@ time::time(integer value)
 	_value = value;
 }
 
-time& time::operator=(const time& value)
+RestToolbox::SQL::time& RestToolbox::SQL::time::operator=(const time& value)
 {
 	if (this != &value)
 	{
@@ -29,7 +36,7 @@ time& time::operator=(const time& value)
 	return *this;
 }
 
-bool time::operator==(const time& value)
+bool RestToolbox::SQL::time::operator==(const RestToolbox::SQL::time& value)
 {
 	if (this == &value)
 		return true;
@@ -40,28 +47,28 @@ bool time::operator==(const time& value)
 	return false;
 }
 
-time time::now()
+RestToolbox::SQL::time RestToolbox::SQL::time::now()
 {
-	time t;
+	RestToolbox::SQL::time t;
 	return t;
 }
 
-double time::diff(time& value)
+double RestToolbox::SQL::time::diff(RestToolbox::SQL::time& value)
 {
 	return difftime(this->_value, value._value);
 }
 
-integer time::asInteger()
+integer RestToolbox::SQL::time::asInteger()
 {
 	return _value;
 }
 
-time_t time::get()
+time_t RestToolbox::SQL::time::get()
 {
 	return _value;
 }
 
-string time::format(const char* format)
+string RestToolbox::SQL::time::format(const char* format)
 {
 	string s;
 	tm localtime;
@@ -80,37 +87,37 @@ string time::format(const char* format)
 	return s;
 }
 
-string time::asString()
+string RestToolbox::SQL::time::asString()
 {
 	return format("%d-%m-%Y %H:%M, %a");
 }
 
-string time::asTimeString()
+string RestToolbox::SQL::time::asTimeString()
 {
 	return format("%H:%M");
 }
 
-string time::asDateString()
+string RestToolbox::SQL::time::asDateString()
 {
 	return format("%d-%m-%Y");
 }
 
-void time::addValue(integer value)
+void RestToolbox::SQL::time::addValue(integer value)
 {
 	_value += value;
 }
 
-void time::addMinutes(integer count)
+void RestToolbox::SQL::time::addMinutes(integer count)
 {
 	_value += (60 * count);
 }
 
-void time::addHours(integer count)
+void RestToolbox::SQL::time::addHours(integer count)
 {
 	_value += (3600 * count);
 }
 
-void time::addDays(integer count)
+void RestToolbox::SQL::time::addDays(integer count)
 {
 	_value += ((3600 * 24) * count);
 }
@@ -224,15 +231,15 @@ string& trimright(string& s)
 
 string& trim(string& s)
 {
-	trimleft( s );
-	trimright( s );
+	RestToolbox::SQL::trimleft( s );
+	RestToolbox::SQL::trimright( s );
 	return s;
 }
 
 string trim(const string& s)
 {
 	string t = s;
-	return trim(t);
+	return RestToolbox::SQL::trim(t);
 }
 
 //CRT_SECURE_NO_WARNINGS
@@ -252,7 +259,7 @@ void listToVector(string s, std::vector<string>& vector, const char* sep)
 	while (token)
 	{
 		string sToken = token;
-		vector.push_back(trim(sToken));
+		vector.push_back(RestToolbox::SQL::trim(sToken));
 		token = strtok(NULL, sep);
 	}
 
@@ -260,7 +267,3 @@ void listToVector(string s, std::vector<string>& vector, const char* sep)
 }
 
 #pragma warning(default : 4996)
-
-
-//sql eof
-};
