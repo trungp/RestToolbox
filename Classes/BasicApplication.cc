@@ -6,6 +6,7 @@
 //
 //
 
+#include "pch.h"
 #include "BasicApplication.h"
 #include <mutex>
 #include "SQLite3/sqlite3.h"

@@ -10,12 +10,17 @@
 
 #include <iostream>
 
-#if defined(WIN32)
+#if defined(_WIN32)
 typedef unsigned __int64 uint64_t;
 #endif
 
 namespace RestToolbox
 {
+#if defined(_WIN32)
+    std::string utf8_encode(const std::wstring &wstr);
+    std::wstring utf8_decode(const std::string &str);
+#endif
+
     namespace Models
     {
         class BasicObject

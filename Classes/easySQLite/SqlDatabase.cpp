@@ -18,8 +18,8 @@ Database::Database(void)
 
 	close();
 
-#ifdef WIN32
-	_tzset();
+#ifdef _WIN32
+	//_tzset();
 #else
     tzset();
 #endif

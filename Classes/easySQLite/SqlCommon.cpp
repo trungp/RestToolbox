@@ -7,7 +7,11 @@
 
 #include "SqlCommon.h"
 #include <sstream>
+#if defined(APPLE)
 #include <CommonCrypto/CommonCrypto.h>
+#elif defined(_WIN32)
+#include "SHA1.h"
+#endif
 
 using namespace RestToolbox::SQL;
 
@@ -176,7 +180,7 @@ string RestToolbox::SQL::binToHex(const char* buffer, int size)
 
 string RestToolbox::SQL::generateSHA(const std::string value)
 {
-#ifdef WIN32
+#ifdef _WIN32
 	CSHA1 sha;
     
 	sha.Update((UINT_8*)value.c_str(), value.length());

@@ -56,7 +56,8 @@ private:
     cancellation_token _token;
 };
 
-URLRequest::URLRequest(const BasicUri & uri, const std::string & method, const double timeout) : _uri(uri), _timeout(timeout)
+URLRequest::URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion const& completion) : 
+    _uri(uri), _timeout(timeout), _completion(completion)
 {
 
 }
@@ -65,7 +66,6 @@ URLRequest::~URLRequest()
 {
 
 }
-
 
 void URLRequest::Start()
 {

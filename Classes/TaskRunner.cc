@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Artcator Inc. All rights reserved.
 //
 
-//#include "pch.h"
+#include "pch.h"
 #include <algorithm>
 #include "TaskRunner.h"
 #if defined(APPLE)

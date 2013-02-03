@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Artcator Inc. All rights reserved.
 //
 
-//#include "pch.h"
+#include "pch.h"
 #include "BasicUri.h"
 #include <string>
 #include <sstream>
@@ -19,12 +19,12 @@ using namespace RestToolbox::Models;
 
 BasicUri::BasicUri(void) : _uri("")
 {
-    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+    std::cerr << __FUNCSIG__ << std::endl;
 }
 
 BasicUri::BasicUri(const std::string & uri) : _uri(uri)
 {
-    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+    std::cerr << __FUNCSIG__ << std::endl;
 
 #if defined(APPLE)
     RestToolbox::CFScopedPtr<CFStringRef> urlString(CFStringCreateWithCString(kCFAllocatorDefault, _uri.c_str(), _uri.length()));
@@ -33,6 +33,9 @@ BasicUri::BasicUri(const std::string & uri) : _uri(uri)
     {
         _systemUri.reset(CFURLCreateWithString(kCFAllocatorDefault, urlString, nullptr));
     }
+#elif defined(_WIN32)
+    auto string = ref new Platform::String(utf8_decode(_uri).c_str());
+    _systemUri = ref new Windows::Foundation::Uri(string);
 #endif
 }
 
@@ -45,11 +48,8 @@ BasicUri::BasicUri(const std::string & uri) : _uri(uri)
 
 BasicUri::BasicUri(const BasicUri & other) : _uri(other._uri)
 {
-    std::cerr << __PRETTY_FUNCTION__ << std::endl;
-    
-#if defined(APPLE)
+    std::cerr << __FUNCSIG__ << std::endl;
     _systemUri = other._systemUri;
-#endif
 }
 
 //BasicUri& BasicUri::operator= (const BasicUri& other)
@@ -76,22 +76,15 @@ BasicUri::BasicUri(const BasicUri & other) : _uri(other._uri)
 
 BasicUri::~BasicUri()
 {
-
+#if defined(_WIN32)
+    delete _systemUri;
+#endif
 }
 
-#if defined(APPLE)
-BasicUri::operator CFURLRef() const
+BasicUri::operator system_base_type() const
 {
     return _systemUri;
 }
-
-#elif defined(WIN32)
-
-BasicUri::operator Windows::Foundation::Uri^() const
-{
-    return nullptr;
-}
-#endif
 
 std::wstring UriEncode(const std::wstring& text)
 {

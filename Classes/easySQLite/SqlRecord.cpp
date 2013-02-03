@@ -145,7 +145,7 @@ void Record::setBool(int index, bool value)
 		v->setBool(value);
 }
 
-void Record::setTime(int index, time value)
+void Record::setTime(int index, RestToolbox::SQL::time value)
 {
 	if (Value* v = getValue(index))
 		v->setTime(value);
@@ -192,7 +192,7 @@ void Record::setBool(string fieldName, bool value)
 		setBool(field->getIndex(), value);
 }
 
-void Record::setTime(string fieldName, time value)
+void Record::setTime(string fieldName, RestToolbox::SQL::time value)
 {
 	if (Field* field = fieldByName(fieldName))
 		setTime(field->getIndex(), value);

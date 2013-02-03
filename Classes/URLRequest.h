@@ -17,7 +17,6 @@
 
 #if defined(APPLE)
 #import <Foundation/Foundation.h>
-
 @class __URLRequestOperation;
 #endif
 
@@ -28,7 +27,7 @@ namespace RestToolbox
     namespace Models
     {
         //typedef decltype(f) function_t;
-        
+
         typedef std::function<void(int status, const Json::Value & root)> URLRequestCompletion;
         
         class URLRequest final : public BasicObject
@@ -37,8 +36,8 @@ namespace RestToolbox
             URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion const& completion);
             //URLRequest(URLRequest && other);
             
-            URLRequest(const URLRequest & request) = delete;
-            URLRequest & operator=(const URLRequest & request) = delete;
+            //URLRequest(const URLRequest & request) = delete;
+            //URLRequest & operator=(const URLRequest & request) = delete;
             
             virtual ~URLRequest();
             
@@ -63,3 +62,4 @@ namespace RestToolbox
         };
     }
 }
+

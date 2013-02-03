@@ -14,9 +14,11 @@
     <Filter Include="sqlite3">
       <UniqueIdentifier>{ccc41e2e-fced-4ff3-935c-da6e37253052}</UniqueIdentifier>
     </Filter>
+    <Filter Include="easySQLite">
+      <UniqueIdentifier>{c863868f-2e12-4883-9f2a-666c02645323}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp" />
     <ClCompile Include="..\Classes\BasicObject.cc">
       <Filter>Classes</Filter>
     </ClCompile>
@@ -44,10 +46,39 @@
     <ClCompile Include="..\Classes\URLRequestQueue.cc">
       <Filter>Classes</Filter>
     </ClCompile>
+    <ClCompile Include="..\pch.cpp" />
+    <ClCompile Include="..\Classes\BasicApplication.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SHA1.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlCommon.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlDatabase.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlField.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlFieldSet.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlRecord.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlRecordSet.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlTable.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\easySQLite\SqlValue.cpp">
+      <Filter>easySQLite</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="targetver.h" />
     <ClInclude Include="..\Classes\BasicObject.h">
       <Filter>Classes</Filter>
     </ClInclude>
@@ -77,6 +108,37 @@
     </ClInclude>
     <ClInclude Include="..\Classes\URLRequestQueue.h">
       <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pch.h" />
+    <ClInclude Include="..\Classes\BasicApplication.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SHA1.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlCommon.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlDatabase.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlField.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlFieldSet.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlRecord.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlRecordSet.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlTable.h">
+      <Filter>easySQLite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\easySQLite\SqlValue.h">
+      <Filter>easySQLite</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
