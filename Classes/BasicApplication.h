@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "BasicObject.h"
+#include "easySQLite/SqlDatabase.h"
 
 #define RestApplication    RestToolbox::Models::BasicApplication::Instance()
 
@@ -25,8 +26,15 @@ namespace RestToolbox
             BasicApplication();
             virtual ~BasicApplication();
             
-            void Initialize();
-        
+            virtual void Initialize();
+            
+            void SetPath(const std::string & value);
+            const std::string & Path() const;
+            
+        private:
+            SQL::Database _db;
+            std::string _path;
+            
         };
     }
 }

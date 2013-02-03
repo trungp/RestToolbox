@@ -12,28 +12,71 @@
 #include <sstream>
 #if defined(APPLE)
 #include <CoreFoundation/CFString.h>
+#include "CFScopedPtr.h"
 #endif
 
 using namespace RestToolbox::Models;
 
+BasicUri::BasicUri(void) : _uri("")
+{
+    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+}
+
 BasicUri::BasicUri(const std::string & uri) : _uri(uri)
 {
+    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+
 #if defined(APPLE)
-    CFStringRef urlString = CFStringCreateWithCString(kCFAllocatorDefault, uri.c_str(), uri.length());
+    RestToolbox::CFScopedPtr<CFStringRef> urlString(CFStringCreateWithCString(kCFAllocatorDefault, _uri.c_str(), _uri.length()));
+    
     if (urlString != nullptr)
     {
-        _systemUri = CFURLCreateWithString(kCFAllocatorDefault, urlString, nullptr);
-        CFRelease(urlString);
+        _systemUri.reset(CFURLCreateWithString(kCFAllocatorDefault, urlString, nullptr));
     }
 #endif
 }
 
+//BasicUri::BasicUri(BasicUri const && other) : _uri(std::move(other._uri))
+//{
+//#if defined(APPLE)
+//    _systemUri = other._systemUri;
+//#endif
+//}
+
+BasicUri::BasicUri(const BasicUri & other) : _uri(other._uri)
+{
+    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+    
+#if defined(APPLE)
+    _systemUri = other._systemUri;
+#endif
+}
+
+//BasicUri& BasicUri::operator= (const BasicUri& other)
+//{
+//    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+//    
+//    _uri = other._uri;
+//#if defined(APPLE)
+//    _systemUri = other._systemUri;
+//#endif
+//    return *this;
+//}
+
+//BasicUri::BasicUri(BasicUri && other) : _uri(other._uri), _systemUri(other._systemUri)
+//{
+//    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+//    
+////#if defined(APPLE)
+////    if (_systemUri != nullptr) {
+////        CFRetain(_systemUri);
+////    }
+////#endif
+//}
+
 BasicUri::~BasicUri()
 {
-#if defined(APPLE)
-    if (_systemUri != nullptr)
-        CFRelease(_systemUri);
-#endif
+
 }
 
 #if defined(APPLE)

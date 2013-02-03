@@ -7,8 +7,11 @@
 //
 
 #include "URLRequest.h"
-#include <Availability.h>
+#include <utility>
 #include <json/json.h>
+#include <memory>
+#include <algorithm> 
+
 
 double const kDefaultRequestTimeout = 45.0;
 
@@ -29,7 +32,6 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
     NSURLResponse *_response;
     BOOL _executing;
     BOOL _finished;
-    
     
     NSPort *_port;
     NSRunLoop *_runloop;
@@ -52,12 +54,6 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
 
 - (void)dealloc
 {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED
-    [_port release];
-    [_runloop release];
-    _runloop = nil;
-#endif
-    
     [_port release];
     [_runloop release];
     _runloop = nil;
@@ -179,12 +175,14 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
 
 using namespace RestToolbox::Models;
 
-URLRequest::URLRequest(const BasicUri & uri, const std::string & method, const double timeout) : _uri(uri), _timeout(timeout)
+URLRequest::URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion const& completion) :
+                        _uri(uri), _timeout(timeout),
+                        _completion(std::cref(completion))
 {
     _queue = [[NSOperationQueue alloc] init];
     
-    CFURLRef requestUrl(uri);
-    _platform_request = [[NSMutableURLRequest alloc] initWithURL:(NSURL *)requestUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:timeout];
+    _platform_request = [[NSMutableURLRequest alloc] initWithURL:(NSURL *)CFURLRef(_uri)
+                                                     cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:timeout];
     
     NSString *ns_method = [[NSString alloc] initWithUTF8String:method.c_str()];
     [_platform_request setHTTPMethod:ns_method];
@@ -193,6 +191,14 @@ URLRequest::URLRequest(const BasicUri & uri, const std::string & method, const d
     [_platform_request setHTTPShouldUsePipelining:YES];
 }
 
+//URLRequest::URLRequest(URLRequest && other) : _uri(other._uri), _timeout(other._timeout), _completion(other._completion)
+//{
+//    std::cout << "Moving Request..." << std::endl;
+//    
+//    //_completions.push_back(std::move(other.))
+//    
+//}
+
 URLRequest::~URLRequest()
 {
     [_queue release];
@@ -200,10 +206,33 @@ URLRequest::~URLRequest()
     [_operation release];
 }
 
+//URLRequest::URLRequest(const URLRequest & request) : _uri(request._uri), _timeout(request._timeout)
+//{
+//    std::cout << "Copying Request..." << std::endl;
+//}
+//
+//URLRequest & URLRequest::operator=(const URLRequest & request)
+//{
+//    std::cout << "Copying Request..." << std::endl;
+//
+//    return *this;
+//}
+//
+
+void URLRequest::CallCompletion(int status, const Json::Value & root)
+{
+//    for (URLRequestCompletion completion : _completions)
+//    {
+//        completion(status, root);
+//    }
+//    
+    _completion(status, root);
+}
+
 void URLRequest::Start()
 {
     _operation = [[__URLRequestOperation alloc] initWithURLRequest:_platform_request inQueue:_queue withCompletion:^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
-        NSString *stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        auto stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         Json::Reader reader(Json::Features::all());
         
         std::string document([stringData UTF8String]);
@@ -211,10 +240,26 @@ void URLRequest::Start()
         
         reader.parse(document, root);
         
-        for (std::string member : root.getMemberNames())
-        {
-            std::cout << member << std::endl;
-        }
+        this->CallCompletion([response statusCode], root);
+        
+//        for (std::string member : root.getMemberNames())
+//        {
+//            
+//            std::cout << member << std::endl;
+//        }
+//        
+//        Json::Value dataValue = root.get("data", "");
+//        if (dataValue.isArray())
+//        {
+//            for (Json::Value item : dataValue)
+//            {
+//                std::cout << item["thumb_170"].asString() << std::endl;
+//            }
+//        }
+//        else
+//        {
+//            std::cerr << "No data value!" << std::endl;
+//        }
         
         [stringData release];
     }];

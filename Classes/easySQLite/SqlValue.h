@@ -9,12 +9,10 @@
 
 #include "SqlCommon.h"
 
-
 namespace RestToolbox
 {
     namespace SQL
     {
-        
         class Value
         {
         private:
@@ -51,6 +49,5 @@ namespace RestToolbox
             void setValue(char* value, field_type type);
             
         };
-        
     }
 }

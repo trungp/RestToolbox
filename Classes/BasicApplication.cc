@@ -32,8 +32,18 @@ BasicApplication::~BasicApplication()
     
 }
 
+void BasicApplication::SetPath(const std::string & value)
+{
+    _path = value;
+}
+
+const std::string & BasicApplication::Path() const
+{
+    return _path;
+}
+
 void BasicApplication::Initialize()
 {
-    
+    _db.open(_path);
 }
 

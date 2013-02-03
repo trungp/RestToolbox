@@ -123,21 +123,21 @@ void RestToolbox::SQL::time::addDays(integer count)
 }
 
 
-string intToStr(int value)
+string RestToolbox::SQL::intToStr(int value)
 {
     std::stringstream ss;
     ss << value;
     return ss.str();
 }
 
-string intToStr(integer value)
+string RestToolbox::SQL::intToStr(integer value)
 {
     std::stringstream ss;
     ss << value;
     return ss.str();
 }
 
-string quoteStr(string value)
+string RestToolbox::SQL::quoteStr(string value)
 {
 	string s;
 
@@ -155,7 +155,7 @@ string quoteStr(string value)
 //CRT_SECURE_NO_WARNINGS
 #pragma warning(disable : 4996)
 
-string binToHex(const char* buffer, int size)
+string RestToolbox::SQL::binToHex(const char* buffer, int size)
 {
 	std::string s;
 
@@ -174,7 +174,7 @@ string binToHex(const char* buffer, int size)
 
 #pragma warning(default : 4996)
 
-string generateSHA(const std::string value)
+string RestToolbox::SQL::generateSHA(const std::string value)
 {
 #ifdef WIN32
 	CSHA1 sha;
@@ -202,7 +202,7 @@ string generateSHA(const std::string value)
 #endif
 }
 
-string& trimleft(string& s)
+string& RestToolbox::SQL::trimleft(string& s)
 {
 	string::iterator it;
 
@@ -214,7 +214,7 @@ string& trimleft(string& s)
 	return s;
 }
 
-string& trimright(string& s)
+string& RestToolbox::SQL::trimright(string& s)
 {
 	string::difference_type dt;
 	string::reverse_iterator it;
@@ -229,14 +229,14 @@ string& trimright(string& s)
 	return s;
 }
 
-string& trim(string& s)
+string& RestToolbox::SQL::trim(string& s)
 {
 	RestToolbox::SQL::trimleft( s );
 	RestToolbox::SQL::trimright( s );
 	return s;
 }
 
-string trim(const string& s)
+string RestToolbox::SQL::trim(const string& s)
 {
 	string t = s;
 	return RestToolbox::SQL::trim(t);
@@ -245,7 +245,7 @@ string trim(const string& s)
 //CRT_SECURE_NO_WARNINGS
 #pragma warning(disable : 4996)
 
-void listToVector(string s, std::vector<string>& vector, const char* sep)
+void RestToolbox::SQL::listToVector(string s, std::vector<string>& vector, const char* sep)
 {
 	vector.clear();
 

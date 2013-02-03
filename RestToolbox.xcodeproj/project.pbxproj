@@ -17,6 +17,7 @@
 		A4136F7C16B647B200DEC918 /* URLRequest_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = A495797016B1DA090032356B /* URLRequest_mac.mm */; };
 		A4136F8B16B64A3200DEC918 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A495796C16B1D6770032356B /* jsoncpp.cpp */; };
 		A4136F8D16B64A3E00DEC918 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A45EBD1F16B1D06600D2ADC9 /* sqlite3.c */; };
+		A453AB8116BE05AB00543E2B /* scoped_cftyperef.h in Headers */ = {isa = PBXBuildFile; fileRef = A453AB8016BE05AB00543E2B /* scoped_cftyperef.h */; };
 		A45EBD2316B1D06600D2ADC9 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A45EBD1F16B1D06600D2ADC9 /* sqlite3.c */; };
 		A45EBD2416B1D06600D2ADC9 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2016B1D06600D2ADC9 /* sqlite3.h */; };
 		A45EBD2516B1D06600D2ADC9 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2116B1D06600D2ADC9 /* sqlite3ext.h */; };
@@ -48,6 +49,8 @@
 		A476E94F16B729E900BBBCD2 /* SqlValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93516B729E900BBBCD2 /* SqlValue.cpp */; };
 		A476E95016B729E900BBBCD2 /* SqlValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A476E93516B729E900BBBCD2 /* SqlValue.cpp */; };
 		A476E95116B729E900BBBCD2 /* SqlValue.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E93616B729E900BBBCD2 /* SqlValue.h */; };
+		A476E95D16B75F1800BBBCD2 /* b64.c in Sources */ = {isa = PBXBuildFile; fileRef = A476E95C16B75F1700BBBCD2 /* b64.c */; };
+		A476E95E16B75F1800BBBCD2 /* b64.c in Sources */ = {isa = PBXBuildFile; fileRef = A476E95C16B75F1700BBBCD2 /* b64.c */; };
 		A495795C16B1D3100032356B /* BasicObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A495795A16B1D3100032356B /* BasicObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A495796D16B1D6770032356B /* json-forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = A495796A16B1D6770032356B /* json-forwards.h */; };
 		A495796E16B1D6770032356B /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = A495796B16B1D6770032356B /* json.h */; };
@@ -76,6 +79,8 @@
 		A4136F7316B647A500DEC918 /* BasicObject.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicObject.cc; path = Classes/BasicObject.cc; sourceTree = SOURCE_ROOT; };
 		A4136F7416B647A500DEC918 /* BasicUri.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicUri.cc; path = Classes/BasicUri.cc; sourceTree = SOURCE_ROOT; };
 		A4136F7516B647A500DEC918 /* TaskRunner.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TaskRunner.cc; path = Classes/TaskRunner.cc; sourceTree = SOURCE_ROOT; };
+		A453AB8016BE05AB00543E2B /* scoped_cftyperef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scoped_cftyperef.h; path = Classes/scoped_cftyperef.h; sourceTree = SOURCE_ROOT; };
+		A453AB8216BE061600543E2B /* CFScopedPtr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CFScopedPtr.h; path = Classes/CFScopedPtr.h; sourceTree = SOURCE_ROOT; };
 		A45EBD0E16B1CFF800D2ADC9 /* RestToolbox.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = RestToolbox.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45EBD1F16B1D06600D2ADC9 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		A45EBD2016B1D06600D2ADC9 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		A476E93416B729E900BBBCD2 /* SqlTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlTable.h; sourceTree = "<group>"; };
 		A476E93516B729E900BBBCD2 /* SqlValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqlValue.cpp; sourceTree = "<group>"; };
 		A476E93616B729E900BBBCD2 /* SqlValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqlValue.h; sourceTree = "<group>"; };
+		A476E95C16B75F1700BBBCD2 /* b64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = b64.c; path = Classes/b64.c; sourceTree = SOURCE_ROOT; };
 		A495795A16B1D3100032356B /* BasicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicObject.h; path = Classes/BasicObject.h; sourceTree = SOURCE_ROOT; };
 		A495796A16B1D6770032356B /* json-forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
 		A495796B16B1D6770032356B /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 		A45EBD1016B1CFF800D2ADC9 /* RestToolbox */ = {
 			isa = PBXGroup;
 			children = (
+				A453AB8016BE05AB00543E2B /* scoped_cftyperef.h */,
+				A453AB8216BE061600543E2B /* CFScopedPtr.h */,
+				A476E95C16B75F1700BBBCD2 /* b64.c */,
 				A495796816B1D6080032356B /* jsoncpp */,
 				A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */,
 				A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */,
@@ -278,6 +287,7 @@
 				A476E94B16B729E900BBBCD2 /* SqlRecordSet.h in Headers */,
 				A476E94E16B729E900BBBCD2 /* SqlTable.h in Headers */,
 				A476E95116B729E900BBBCD2 /* SqlValue.h in Headers */,
+				A453AB8116BE05AB00543E2B /* scoped_cftyperef.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +374,7 @@
 				A476E94A16B729E900BBBCD2 /* SqlRecordSet.cpp in Sources */,
 				A476E94D16B729E900BBBCD2 /* SqlTable.cpp in Sources */,
 				A476E95016B729E900BBBCD2 /* SqlValue.cpp in Sources */,
+				A476E95E16B75F1800BBBCD2 /* b64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +397,7 @@
 				A476E94916B729E900BBBCD2 /* SqlRecordSet.cpp in Sources */,
 				A476E94C16B729E900BBBCD2 /* SqlTable.cpp in Sources */,
 				A476E94F16B729E900BBBCD2 /* SqlValue.cpp in Sources */,
+				A476E95D16B75F1800BBBCD2 /* b64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +507,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RestToolbox-Prefix.pch";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

@@ -10,20 +10,20 @@
 using namespace RestToolbox::SQL;
 
 Record::Record(FieldSet* fields)
-	: _fields(fields)
+: _fields(fields)
 {
 	initColumnCount(_fields->count());
 }
 
 Record::Record(Record* record)
-	: _fields(record->_fields)
+: _fields(record->_fields)
 {
 	initColumnCount(_fields->count());
 	_values = record->_values;
 }
 
 Record::Record(const Record& record)
-	: _fields(record._fields)
+: _fields(record._fields)
 {
 	initColumnCount(_fields->count());
 	_values = record._values;
@@ -53,7 +53,7 @@ Value* Record::getValue(int column_index)
 {
 	if ((column_index >= 0) && (column_index < (int)_values.size()))
 		return &_values.at(column_index);
-
+    
 	return NULL;
 }
 
@@ -61,7 +61,7 @@ Value* Record::getValue(string fieldName)
 {
 	if (Field* field = _fields->getByName(fieldName))
 		return getValue(field->getIndex());
-
+    
 	return NULL;
 }
 
@@ -75,14 +75,14 @@ Value* Record::getKeyIdValue()
 				return getValue(field->getIndex());
 		}
 	}
-
+    
 	return NULL;
 }
 
 string Record::toString()
 {
 	string s;
-
+    
 	for (int column = 0; column < columnCount(); column++)
 		if (Value* value = getValue(column))
 		{
@@ -90,14 +90,14 @@ string Record::toString()
 			if (column < (columnCount() - 1))
 				s += "|";
 		}
-
+    
 	return s;
 }
 
 string Record::toSql()
 {
 	string s;
-
+    
 	for (int index = 0; index < _fields->count(); index++)
 	{
 		if (Field* field = _fields->getByIndex(index))
@@ -105,13 +105,13 @@ string Record::toSql()
 			if (Value* value = getValue(field->getName()))
 			{
 				s += value->toSql(field->getType());
-
+                
 				if (index < (_fields->count() - 1))
 					s += ", ";
 			}
 		}
 	}
-
+    
 	return s;
 }
 
@@ -201,40 +201,40 @@ void Record::setTime(string fieldName, time value)
 string Record::toSqlInsert(string tableName)
 {
 	string s = "insert into " + tableName + " ";
-
+    
 	s += "(" + _fields->toString() + ")";
-
+    
 	s += " values ";
-
+    
 	s += "(" + toSql() + ")";
-
+    
 	return s;
 }
 
 string Record::toSqlUpdate(string tableName)
 {
 	string s = "update " + tableName + " set ";
-
+    
 	for (int index = 0; index < _fields->count(); index++)
 	{
 		if (Field* field = _fields->getByIndex(index))
 		{
 			if (field->isKeyIdField())
 				continue;
-
+            
 			if (Value* value = getValue(field->getName()))
 			{
 				s += field->getName() + "=" + value->toSql(field->getType());
-
+                
 				if (index < (_fields->count() - 1))
 					s += ", ";
 			}
 		}
 	}
-
+    
 	if (Value* value = getKeyIdValue())
 		s += " where _ID = " + value->toSql(type_int);
-
+    
 	return s;
 }
 
@@ -259,7 +259,7 @@ bool Record::equalsValues(Record* record)
 			{
 				if (field->isKeyIdField())
 					continue;
-
+                
 				if (Value* value1 = getValue(field->getName()))
 					if (Value* value2 = record->getValue(field->getName()))
 						if (!value1->equals(*value2))
@@ -270,5 +270,4 @@ bool Record::equalsValues(Record* record)
 	}
 	return false;
 }
-
 

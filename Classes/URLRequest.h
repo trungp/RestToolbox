@@ -9,6 +9,9 @@
 #pragma once
 
 #include <iostream>
+#include <functional>
+#include <vector>
+#include "jsoncpp/json/json.h"
 #include "BasicObject.h"
 #include "BasicUri.h"
 
@@ -24,10 +27,19 @@ namespace RestToolbox
 {
     namespace Models
     {
+        //typedef decltype(f) function_t;
+        
+        typedef std::function<void(int status, const Json::Value & root)> URLRequestCompletion;
+        
         class URLRequest final : public BasicObject
         {
         public:
-            URLRequest(const BasicUri & uri, const std::string & method, const double timeout = kDefaultRequestTimeout);
+            URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion const& completion);
+            //URLRequest(URLRequest && other);
+            
+            URLRequest(const URLRequest & request) = delete;
+            URLRequest & operator=(const URLRequest & request) = delete;
+            
             virtual ~URLRequest();
             
             void Start();
@@ -36,6 +48,8 @@ namespace RestToolbox
             bool UseCookies() const;
             
         private:
+            void CallCompletion(int status, const Json::Value & root);
+            
 #if defined(APPLE)
             __URLRequestOperation *_operation;
             NSMutableURLRequest *_platform_request;
@@ -44,7 +58,8 @@ namespace RestToolbox
             
 #endif
             const double _timeout;
-            const BasicUri &_uri;
+            const BasicUri _uri;
+            URLRequestCompletion const& _completion;
         };
     }
 }

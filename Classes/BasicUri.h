@@ -12,7 +12,7 @@
 #include "BasicObject.h"
 
 #if defined(APPLE)
-#include <CoreFoundation/CFURL.h>
+#include "CFScopedPtr.h"
 #endif
 
 namespace RestToolbox
@@ -22,7 +22,13 @@ namespace RestToolbox
         class BasicUri : public BasicObject
         {
         public:
+            BasicUri(void);
             BasicUri(const std::string & uri);
+            BasicUri(const BasicUri & other);
+            
+            BasicUri(BasicUri const && other) = delete;
+            BasicUri& operator= (const BasicUri& other) = delete;
+            
             virtual ~BasicUri();
             
 #if defined(APPLE)
@@ -32,9 +38,9 @@ namespace RestToolbox
 #endif
             
         private:
-            const std::string _uri;
+            std::string _uri;
 #if defined(APPLE)
-            CFURLRef _systemUri;
+            RestToolbox::CFScopedPtr<CFURLRef> _systemUri;
 #endif
         };
     }

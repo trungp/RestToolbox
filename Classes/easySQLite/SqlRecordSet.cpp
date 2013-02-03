@@ -10,7 +10,7 @@
 using namespace RestToolbox::SQL;
 
 RecordSet::RecordSet(sqlite3* db)
-	: _fields(NULL)
+: _fields(NULL)
 {
 	_db = db;
 	_err_msg.clear();
@@ -19,7 +19,7 @@ RecordSet::RecordSet(sqlite3* db)
 }
 
 RecordSet::RecordSet(sqlite3* db, FieldSet* fields)
-	: _fields(*fields)
+: _fields(*fields)
 {
 	_db = db;
 	_err_msg.clear();
@@ -28,7 +28,7 @@ RecordSet::RecordSet(sqlite3* db, FieldSet* fields)
 }
 
 RecordSet::RecordSet(sqlite3* db, Field* definition)
-	: _fields(definition)
+: _fields(definition)
 {
 	_db = db;
 	_err_msg.clear();
@@ -71,47 +71,47 @@ int RecordSet::count()
 int RecordSet::on_next_record(void* param, int column_count, char** values, char** columns)
 {
 	RecordSet* recordset = (RecordSet*)param;
-
+    
 	Record record(recordset->fields());
-
+    
 	record.initColumnCount(column_count);
-
-  for (int index = 0; index < column_count; index++)
+    
+    for (int index = 0; index < column_count; index++)
 	{
 		char* value = values[index];
-
+        
 		if (Field* field = recordset->_fields.getByIndex(index))
 		{
-			record.initColumnValue(index, value, field->getType());			
+			record.initColumnValue(index, value, field->getType());
 		}
-  }
-
+    }
+    
 	recordset->_records.push_back(record);
-
-  return DATASET_ITERATION_CONTINUE;
+    
+    return DATASET_ITERATION_CONTINUE;
 }
 
 bool RecordSet::query(string sql)
 {
 	close();
-
+    
 	char* error = NULL;
-
+    
 	_result_query = sqlite3_exec(_db, sql.c_str(), on_next_record, this, &error);
-
+    
 	if (isResult())
 	{
 		return true;
 	}
-
+    
 	if (error)
 	{
 		_err_msg = error;
 		sqlite3_free(error);
 	}
-
+    
 	THROW_EXCEPTION("RecordSet::query: " + errMsg())
-
+    
 	return false;
 }
 
@@ -119,14 +119,14 @@ Record* RecordSet::getRecord(int record_index)
 {
 	if ((record_index >= 0) && (record_index < (int)_records.size()))
 		return &_records.at(record_index);
-
+    
 	return NULL;
 }
 
 string RecordSet::toString()
 {
 	string s;
-
+    
 	for (int record_index = 0; record_index < count(); record_index++)
 	{
 		if (Record* record = getRecord(record_index))
@@ -135,7 +135,7 @@ string RecordSet::toString()
 			s += "\r\n";
 		}
 	}
-
+    
 	return s;
 }
 
