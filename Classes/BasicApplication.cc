@@ -3,13 +3,14 @@
 //  RestToolbox
 //
 //  Created by Matt Jarjoura on 1/28/13.
-//
+//  Copyright (c) 2013 Artcator Inc. All rights reserved.
 //
 
 #include "pch.h"
 #include "BasicApplication.h"
 #include <mutex>
 #include "SQLite3/sqlite3.h"
+#include <thread>
 
 using namespace RestToolbox::Models;
 

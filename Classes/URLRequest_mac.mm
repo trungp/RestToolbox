@@ -145,7 +145,7 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
         [_connection cancel];
         
         if (self.completion)
-            self.completion(properResponse, nil, [NSError errorWithDomain:@"com.foodspotting" code:0 userInfo:nil]);
+            self.completion(properResponse, nil, [NSError errorWithDomain:@"com.artcator.resttoolbox" code:0 userInfo:nil]);
     }
 }
 
@@ -191,14 +191,6 @@ URLRequest::URLRequest(BasicUri const& uri, std::string const& method, const dou
     [_platform_request setHTTPShouldUsePipelining:YES];
 }
 
-//URLRequest::URLRequest(URLRequest && other) : _uri(other._uri), _timeout(other._timeout), _completion(other._completion)
-//{
-//    std::cout << "Moving Request..." << std::endl;
-//    
-//    //_completions.push_back(std::move(other.))
-//    
-//}
-
 URLRequest::~URLRequest()
 {
     [_queue release];
@@ -206,11 +198,11 @@ URLRequest::~URLRequest()
     [_operation release];
 }
 
-//URLRequest::URLRequest(const URLRequest & request) : _uri(request._uri), _timeout(request._timeout)
-//{
-//    std::cout << "Copying Request..." << std::endl;
-//}
-//
+URLRequest::URLRequest(const URLRequest & request) : _uri(request._uri), _timeout(request._timeout), _completion(request._completion)
+{
+    std::cout << "Copying Request..." << std::endl;
+}
+
 //URLRequest & URLRequest::operator=(const URLRequest & request)
 //{
 //    std::cout << "Copying Request..." << std::endl;
@@ -239,6 +231,11 @@ void URLRequest::Start()
         
         [stringData release];
     }];
+}
+
+void URLRequest::Cancel()
+{
+    [_operation cancel];
 }
 
 void URLRequest::SetUseCookies(const bool value)

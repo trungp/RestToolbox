@@ -8,6 +8,7 @@
 
 #include "pch.h"
 #include "BasicUri.h"
+#include "Logger.h"
 #include <string>
 #include <sstream>
 #if defined(APPLE)
@@ -23,12 +24,12 @@ using namespace RestToolbox::Models;
 
 BasicUri::BasicUri(void) : _uri("")
 {
-    std::cerr << __FUNCSIG__ << std::endl;
+    LogDebug("%s", __FUNCSIG__);
 }
 
 BasicUri::BasicUri(const std::string & uri) : _uri(uri)
 {
-    std::cerr << __FUNCSIG__ << std::endl;
+    LogDebug("%s", __FUNCSIG__);
 
 #if defined(APPLE)
     RestToolbox::CFScopedPtr<CFStringRef> urlString(CFStringCreateWithCString(kCFAllocatorDefault, _uri.c_str(), _uri.length()));
@@ -45,7 +46,7 @@ BasicUri::BasicUri(const std::string & uri) : _uri(uri)
 
 BasicUri::BasicUri(const BasicUri & other) : _uri(other._uri)
 {
-    std::cerr << __FUNCSIG__ << std::endl;
+    LogDebug("%s", __FUNCSIG__);
     _systemUri = other._systemUri;
 }
 
