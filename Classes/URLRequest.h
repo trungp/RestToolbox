@@ -39,7 +39,7 @@ namespace RestToolbox
             //URLRequest(const URLRequest & request) = delete;
             //URLRequest & operator=(const URLRequest & request) = delete;
             
-            virtual ~URLRequest() throw();
+            virtual ~URLRequest();
             
             void Start();
             

@@ -51,7 +51,7 @@ void Database::close()
 	}
 }
 
-bool Database::isOpen()
+bool Database::isOpen() const
 {
 	return (_result_open == SQLITE_OK);
 }

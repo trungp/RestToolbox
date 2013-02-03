@@ -30,7 +30,8 @@ BasicApplication::BasicApplication()
 
 BasicApplication::~BasicApplication()
 {
-    
+    if (DatabaseOpen())
+        _db.close();
 }
 
 void BasicApplication::SetPath(const std::string & value)
@@ -47,4 +48,15 @@ void BasicApplication::Initialize()
 {
     _db.open(_path);
 }
+
+bool BasicApplication::DatabaseOpen() const
+{
+    return _db.isOpen();
+}
+
+RestToolbox::SQL::Database & BasicApplication::Database()
+{
+    return _db;
+}
+
 

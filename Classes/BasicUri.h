@@ -40,7 +40,7 @@ namespace RestToolbox
             BasicUri(BasicUri const && other) = delete;
 #endif
 
-            virtual ~BasicUri() throw();
+            virtual ~BasicUri();
 
             operator system_base_type() const;
             

@@ -31,6 +31,9 @@ namespace RestToolbox
             void SetPath(const std::string & value);
             const std::string & Path() const;
             
+            bool DatabaseOpen() const;
+            SQL::Database & Database();
+            
         private:
             SQL::Database _db;
             std::string _path;

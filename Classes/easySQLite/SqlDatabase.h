@@ -31,7 +31,7 @@ namespace RestToolbox
             string errMsg();
             bool open(string filename);
             void close();
-            bool isOpen();
+            bool isOpen() const;
             
         public:
             bool transactionBegin();
