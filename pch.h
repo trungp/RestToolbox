@@ -5,6 +5,7 @@
 
 #pragma once
 
+#if defined(_WIN32)
 #include "targetver.h"
 
 #define WIN32_LEAN_AND_MEAN
@@ -13,3 +14,5 @@
 #include <msxml6.h>
 #include <collection.h>
 #include <ppltasks.h>
+#endif
+

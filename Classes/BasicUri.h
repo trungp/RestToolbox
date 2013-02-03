@@ -33,14 +33,14 @@ namespace RestToolbox
             BasicUri(void);
             BasicUri(const std::string & uri);
             BasicUri(const BasicUri & other);
+            BasicUri& operator= (const BasicUri& other);
             
 #if !defined(_WIN32)
             // Visual Studio 2012 doesn't support this C++11 feature
             BasicUri(BasicUri const && other) = delete;
-            BasicUri& operator= (const BasicUri& other) = delete;
 #endif
 
-            virtual ~BasicUri();
+            virtual ~BasicUri() throw();
 
             operator system_base_type() const;
             

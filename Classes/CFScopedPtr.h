@@ -8,7 +8,6 @@
 
 #pragma once
 
-#if defined(APPLE)
 #include <CoreFoundation/CoreFoundation.h>
 
 namespace RestToolbox {
@@ -87,5 +86,3 @@ namespace RestToolbox {
     
 }
 
-
-#endif

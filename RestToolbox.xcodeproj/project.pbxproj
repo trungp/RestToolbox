@@ -22,6 +22,12 @@
 		A45EBD2416B1D06600D2ADC9 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2016B1D06600D2ADC9 /* sqlite3.h */; };
 		A45EBD2516B1D06600D2ADC9 /* sqlite3ext.h in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2116B1D06600D2ADC9 /* sqlite3ext.h */; };
 		A45EBD2716B1D07700D2ADC9 /* RestToolbox-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = A45EBD2616B1D07700D2ADC9 /* RestToolbox-Prefix.pch */; };
+		A46473D216BE622400E2A5CE /* URLRequestQueue.cc in Sources */ = {isa = PBXBuildFile; fileRef = A46473D016BE622300E2A5CE /* URLRequestQueue.cc */; };
+		A46473D316BE622400E2A5CE /* URLRequestQueue.cc in Sources */ = {isa = PBXBuildFile; fileRef = A46473D016BE622300E2A5CE /* URLRequestQueue.cc */; };
+		A46473D416BE622400E2A5CE /* URLRequestQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A46473D116BE622300E2A5CE /* URLRequestQueue.h */; };
+		A46473D716BE623200E2A5CE /* Logger.cc in Sources */ = {isa = PBXBuildFile; fileRef = A46473D516BE623200E2A5CE /* Logger.cc */; };
+		A46473D816BE623200E2A5CE /* Logger.cc in Sources */ = {isa = PBXBuildFile; fileRef = A46473D516BE623200E2A5CE /* Logger.cc */; };
+		A46473D916BE623200E2A5CE /* Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = A46473D616BE623200E2A5CE /* Logger.h */; };
 		A476E91B16B726AE00BBBCD2 /* BasicApplication.cc in Sources */ = {isa = PBXBuildFile; fileRef = A476E91916B726AE00BBBCD2 /* BasicApplication.cc */; };
 		A476E91C16B726AE00BBBCD2 /* BasicApplication.cc in Sources */ = {isa = PBXBuildFile; fileRef = A476E91916B726AE00BBBCD2 /* BasicApplication.cc */; };
 		A476E91D16B726AE00BBBCD2 /* BasicApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = A476E91A16B726AE00BBBCD2 /* BasicApplication.h */; };
@@ -88,6 +94,10 @@
 		A45EBD2616B1D07700D2ADC9 /* RestToolbox-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RestToolbox-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		A45EBD2816B1D0CD00D2ADC9 /* Base_RestToolbox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Base_RestToolbox.xcconfig; path = Configuration/Base_RestToolbox.xcconfig; sourceTree = SOURCE_ROOT; };
 		A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug_RestToolbox.xcconfig; path = Configuration/Debug_RestToolbox.xcconfig; sourceTree = SOURCE_ROOT; };
+		A46473D016BE622300E2A5CE /* URLRequestQueue.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = URLRequestQueue.cc; path = Classes/URLRequestQueue.cc; sourceTree = SOURCE_ROOT; };
+		A46473D116BE622300E2A5CE /* URLRequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLRequestQueue.h; path = Classes/URLRequestQueue.h; sourceTree = SOURCE_ROOT; };
+		A46473D516BE623200E2A5CE /* Logger.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Logger.cc; path = Classes/Logger.cc; sourceTree = SOURCE_ROOT; };
+		A46473D616BE623200E2A5CE /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logger.h; path = Classes/Logger.h; sourceTree = SOURCE_ROOT; };
 		A476E91916B726AE00BBBCD2 /* BasicApplication.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicApplication.cc; path = Classes/BasicApplication.cc; sourceTree = SOURCE_ROOT; };
 		A476E91A16B726AE00BBBCD2 /* BasicApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicApplication.h; path = Classes/BasicApplication.h; sourceTree = SOURCE_ROOT; };
 		A476E91E16B728E900BBBCD2 /* LICENSES.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSES.md; sourceTree = "<group>"; };
@@ -185,10 +195,14 @@
 				A495795A16B1D3100032356B /* BasicObject.h */,
 				A4136F7416B647A500DEC918 /* BasicUri.cc */,
 				A495798316B1F3020032356B /* BasicUri.h */,
+				A46473D516BE623200E2A5CE /* Logger.cc */,
+				A46473D616BE623200E2A5CE /* Logger.h */,
 				A4136F7516B647A500DEC918 /* TaskRunner.cc */,
 				A495797516B1E05B0032356B /* TaskRunner.h */,
 				A495797016B1DA090032356B /* URLRequest_mac.mm */,
 				A495797116B1DA090032356B /* URLRequest.h */,
+				A46473D016BE622300E2A5CE /* URLRequestQueue.cc */,
+				A46473D116BE622300E2A5CE /* URLRequestQueue.h */,
 				A476E92016B729E900BBBCD2 /* easySQLite */,
 				A45EBD1D16B1D06600D2ADC9 /* SQLite3 */,
 				A45EBD1116B1CFF800D2ADC9 /* Supporting Files */,
@@ -288,6 +302,8 @@
 				A476E94E16B729E900BBBCD2 /* SqlTable.h in Headers */,
 				A476E95116B729E900BBBCD2 /* SqlValue.h in Headers */,
 				A453AB8116BE05AB00543E2B /* scoped_cftyperef.h in Headers */,
+				A46473D416BE622400E2A5CE /* URLRequestQueue.h in Headers */,
+				A46473D916BE623200E2A5CE /* Logger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +391,8 @@
 				A476E94D16B729E900BBBCD2 /* SqlTable.cpp in Sources */,
 				A476E95016B729E900BBBCD2 /* SqlValue.cpp in Sources */,
 				A476E95E16B75F1800BBBCD2 /* b64.c in Sources */,
+				A46473D316BE622400E2A5CE /* URLRequestQueue.cc in Sources */,
+				A46473D816BE623200E2A5CE /* Logger.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +416,8 @@
 				A476E94C16B729E900BBBCD2 /* SqlTable.cpp in Sources */,
 				A476E94F16B729E900BBBCD2 /* SqlValue.cpp in Sources */,
 				A476E95D16B75F1800BBBCD2 /* b64.c in Sources */,
+				A46473D216BE622400E2A5CE /* URLRequestQueue.cc in Sources */,
+				A46473D716BE623200E2A5CE /* Logger.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +428,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A45EBD2916B1D17000D2ADC9 /* Debug_RestToolbox.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -421,7 +440,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = Classes/jsoncpp;
+				HEADER_SEARCH_PATHS = (
+					Classes/jsoncpp,
+					"../**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -434,7 +456,6 @@
 		A4136F7016B6477200DEC918 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
@@ -444,7 +465,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = Classes/jsoncpp;
+				HEADER_SEARCH_PATHS = (
+					Classes/jsoncpp,
+					"../**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,7 +511,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = Classes/jsoncpp;
+				HEADER_SEARCH_PATHS = (
+					Classes/jsoncpp,
+					../,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -513,7 +540,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = Classes/jsoncpp;
+				HEADER_SEARCH_PATHS = (
+					Classes/jsoncpp,
+					../,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

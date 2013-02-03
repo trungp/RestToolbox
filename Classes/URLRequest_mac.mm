@@ -221,11 +221,6 @@ URLRequest::~URLRequest()
 
 void URLRequest::CallCompletion(int status, const Json::Value & root)
 {
-//    for (URLRequestCompletion completion : _completions)
-//    {
-//        completion(status, root);
-//    }
-//    
     _completion(status, root);
 }
 
@@ -241,25 +236,6 @@ void URLRequest::Start()
         reader.parse(document, root);
         
         this->CallCompletion([response statusCode], root);
-        
-//        for (std::string member : root.getMemberNames())
-//        {
-//            
-//            std::cout << member << std::endl;
-//        }
-//        
-//        Json::Value dataValue = root.get("data", "");
-//        if (dataValue.isArray())
-//        {
-//            for (Json::Value item : dataValue)
-//            {
-//                std::cout << item["thumb_170"].asString() << std::endl;
-//            }
-//        }
-//        else
-//        {
-//            std::cerr << "No data value!" << std::endl;
-//        }
         
         [stringData release];
     }];

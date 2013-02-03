@@ -15,7 +15,7 @@
 #include "BasicObject.h"
 #include "BasicUri.h"
 
-#if defined(APPLE)
+#if defined(APPLE) && defined(__OBJC__)
 #import <Foundation/Foundation.h>
 @class __URLRequestOperation;
 #endif
@@ -39,7 +39,7 @@ namespace RestToolbox
             //URLRequest(const URLRequest & request) = delete;
             //URLRequest & operator=(const URLRequest & request) = delete;
             
-            virtual ~URLRequest();
+            virtual ~URLRequest() throw();
             
             void Start();
             
@@ -49,12 +49,10 @@ namespace RestToolbox
         private:
             void CallCompletion(int status, const Json::Value & root);
             
-#if defined(APPLE)
+#if defined(APPLE) && defined(__OBJC__)
             __URLRequestOperation *_operation;
             NSMutableURLRequest *_platform_request;
             NSOperationQueue *_queue;
-#elif defined(WIN32)
-            
 #endif
             const double _timeout;
             const BasicUri _uri;
