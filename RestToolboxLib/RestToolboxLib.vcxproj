@@ -195,17 +195,21 @@
   <ItemGroup>
     <ClInclude Include="..\Classes\BasicObject.h" />
     <ClInclude Include="..\Classes\BasicUri.h" />
+    <ClInclude Include="..\Classes\Hresult.h" />
     <ClInclude Include="..\Classes\jsoncpp\json\json-forwards.h" />
     <ClInclude Include="..\Classes\jsoncpp\json\json.h" />
+    <ClInclude Include="..\Classes\Logger.h" />
     <ClInclude Include="..\Classes\SQLite3\sqlite3.h" />
-    <ClInclude Include="..\Classes\SQLite3\sqlite3ext.h" />
     <ClInclude Include="..\Classes\TaskRunner.h" />
     <ClInclude Include="..\Classes\URLRequest.h" />
+    <ClInclude Include="..\Classes\URLRequestQueue.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\Hresult.cc" />
     <ClCompile Include="..\Classes\jsoncpp\jsoncpp.cpp" />
+    <ClCompile Include="..\Classes\Logger.cc" />
     <ClCompile Include="..\Classes\SQLite3\sqlite3.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">NotUsing</PrecompiledHeader>
@@ -220,6 +224,7 @@
       <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</CompileAsWinRT>
       <CompileAsWinRT Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</CompileAsWinRT>
     </ClCompile>
+    <ClCompile Include="..\Classes\URLRequestQueue.cc" />
     <ClCompile Include="..\Classes\URLRequest_winrt.cc" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

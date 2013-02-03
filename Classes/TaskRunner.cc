@@ -51,7 +51,7 @@ void TaskRunner::RunDelayedTask(uint64_t delay, std::function<void ()> task)
         _delayedTask = ThreadPoolTimer::CreateTimer(ref new TimerElapsedHandler([task] (ThreadPoolTimer ^timer) {
             task();
         }), popTime);
-		
+        
     }
     catch (Platform::Exception ^ex)
     {

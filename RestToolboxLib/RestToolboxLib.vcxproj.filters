@@ -5,26 +5,78 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{08c9b32a-dc0b-45b3-b27c-6ad799e86549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jsoncpp">
+      <UniqueIdentifier>{a3d0cd1b-af27-4d09-9fcb-6c35fcf423d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sqlite3">
+      <UniqueIdentifier>{ccc41e2e-fced-4ff3-935c-da6e37253052}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="..\Classes\jsoncpp\jsoncpp.cpp" />
-    <ClCompile Include="..\Classes\SQLite3\sqlite3.c" />
-    <ClCompile Include="..\Classes\BasicObject.cc" />
-    <ClCompile Include="..\Classes\BasicUri.cc" />
-    <ClCompile Include="..\Classes\TaskRunner.cc" />
-    <ClCompile Include="..\Classes\URLRequest_winrt.cc" />
+    <ClCompile Include="..\Classes\BasicObject.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BasicUri.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TaskRunner.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\URLRequest_winrt.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\jsoncpp\jsoncpp.cpp">
+      <Filter>jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SQLite3\sqlite3.c">
+      <Filter>sqlite3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hresult.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logger.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\URLRequestQueue.cc">
+      <Filter>Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="..\Classes\BasicObject.h" />
-    <ClInclude Include="..\Classes\BasicUri.h" />
-    <ClInclude Include="..\Classes\jsoncpp\json\json-forwards.h" />
-    <ClInclude Include="..\Classes\jsoncpp\json\json.h" />
-    <ClInclude Include="..\Classes\SQLite3\sqlite3.h" />
-    <ClInclude Include="..\Classes\SQLite3\sqlite3ext.h" />
-    <ClInclude Include="..\Classes\TaskRunner.h" />
-    <ClInclude Include="..\Classes\URLRequest.h" />
+    <ClInclude Include="..\Classes\BasicObject.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BasicUri.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TaskRunner.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\URLRequest.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jsoncpp\json\json-forwards.h">
+      <Filter>jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\jsoncpp\json\json.h">
+      <Filter>jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SQLite3\sqlite3.h">
+      <Filter>sqlite3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hresult.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logger.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\URLRequestQueue.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
