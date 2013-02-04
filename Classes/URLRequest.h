@@ -15,13 +15,19 @@
 #include "BasicObject.h"
 #include "BasicUri.h"
 
-#if defined(APPLE) && defined(__OBJC__)
-#import <Foundation/Foundation.h>
-@class __URLRequestOperation;
+#if defined(_WIN32)
+  #include <wrl/implements.h>
+  #include <ppl.h>
+  #include <MsXml6.h>
+  using namespace Microsoft::WRL;
+  class __URLRequestOperation;
+#elif defined(APPLE) && defined(__OBJC__)
+  #import <Foundation/Foundation.h>
+  @class __URLRequestOperation;
 #elif defined(APPLE) && !defined(__OBJC__)
-typedef void __URLRequestOperation;
-typedef void NSMutableURLRequest;
-typedef void NSOperationQueue;
+  typedef void __URLRequestOperation;
+  typedef void NSMutableURLRequest;
+  typedef void NSOperationQueue;
 #endif
 
 extern double const kDefaultRequestTimeout;
@@ -54,11 +60,18 @@ namespace RestToolbox
             __URLRequestOperation *_operation;
             NSMutableURLRequest *_platform_request;
             NSOperationQueue *_queue;
+#elif defined(_WIN32)
+            friend class __URLRequestOperation;
+
+            Concurrency::cancellation_token_source _cancelToken;
+            ComPtr<IXMLHTTPRequest2> _operation;
 #endif
             bool _canceled;
             const double _timeout;
             const BasicUri _uri;
+            std::string _method;
             URLRequestCompletion const& _completion;
+
         };
     }
 }

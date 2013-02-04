@@ -52,7 +52,7 @@ BasicUri::BasicUri(const BasicUri & other) : _uri(other._uri)
 
 BasicUri& BasicUri::operator= (const BasicUri& other)
 {
-    std::cerr << __PRETTY_FUNCTION__ << std::endl;
+    LogDebug("%s", __FUNCSIG__);
     
     _uri = other._uri;
     _systemUri = other._systemUri;

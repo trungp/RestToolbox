@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RestToolboxLib", "RestToolb
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RestWinRtTester", "RestWinRtTester\RestWinRtTester.vcxproj", "{F0E5CAB7-1D33-4206-88C6-CF19A630C779}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinAPITest", "WinAPITest\WinAPITest.vcxproj", "{A6986040-FFB1-4974-BC2A-72B8DB174055}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -45,6 +47,24 @@ Global
 		{F0E5CAB7-1D33-4206-88C6-CF19A630C779}.Release|x64.ActiveCfg = Release|x64
 		{F0E5CAB7-1D33-4206-88C6-CF19A630C779}.Release|x64.Build.0 = Release|x64
 		{F0E5CAB7-1D33-4206-88C6-CF19A630C779}.Release|x64.Deploy.0 = Release|x64
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|ARM.Build.0 = Debug|ARM
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|Win32.Build.0 = Debug|Win32
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|Win32.Deploy.0 = Debug|Win32
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|x64.ActiveCfg = Debug|x64
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|x64.Build.0 = Debug|x64
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Debug|x64.Deploy.0 = Debug|x64
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|ARM.ActiveCfg = Release|ARM
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|ARM.Build.0 = Release|ARM
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|ARM.Deploy.0 = Release|ARM
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|Win32.ActiveCfg = Release|Win32
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|Win32.Build.0 = Release|Win32
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|Win32.Deploy.0 = Release|Win32
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|x64.ActiveCfg = Release|x64
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|x64.Build.0 = Release|x64
+		{A6986040-FFB1-4974-BC2A-72B8DB174055}.Release|x64.Deploy.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

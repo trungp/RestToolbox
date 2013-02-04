@@ -35,6 +35,10 @@ void URIRequestQueue::AddRequest(URLRequest const& request)
     _queueLock.lock();
     _queue.push_back(request);
     _queueLock.unlock();
+
+    URLRequest nextRequest(_queue.front());
+    nextRequest.Start();
+//    _queue.pop_front();
 }
 
 void URIRequestQueue::Start()
