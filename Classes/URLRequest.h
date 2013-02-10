@@ -38,10 +38,20 @@ namespace RestToolbox
     {
         typedef std::function<void(int status, const Json::Value & root)> URLRequestCompletion;
         
+        template <typename _Functor>
+        class URLRequestFunctor
+        {
+        public:
+            URLRequestFunctor(_Functor const& functor) : _functor(std::cref(functor)) {}
+            _Functor const& get() const { return _functor; }
+        private:
+            _Functor const& _functor;
+        };
+        
         class URLRequest final : public BasicObject
         {
         public:
-            URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion const& completion);
+            URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion completion);
             URLRequest(const URLRequest & request);
             //URLRequest & operator=(const URLRequest & request) = delete;
             
@@ -70,8 +80,8 @@ namespace RestToolbox
             const double _timeout;
             const BasicUri _uri;
             std::string _method;
-            URLRequestCompletion const& _completion;
-
+            URLRequestCompletion _completion;
+            //URLRequestFunctor<URLRequestCompletion> *_completion;
         };
     }
 }

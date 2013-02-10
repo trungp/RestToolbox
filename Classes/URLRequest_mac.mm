@@ -11,7 +11,7 @@
 #include <json/json.h>
 #include <memory>
 #include <algorithm> 
-
+#include "Logger.h"
 
 double const kDefaultRequestTimeout = 45.0;
 
@@ -175,10 +175,12 @@ typedef void (^__URLRequestCompletion)(NSHTTPURLResponse *response, NSData *data
 
 using namespace RestToolbox::Models;
 
-URLRequest::URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion const& completion) :
-                        _uri(uri), _timeout(timeout),
-                        _completion(std::cref(completion))
+URLRequest::URLRequest(BasicUri const& uri, std::string const& method, const double timeout, URLRequestCompletion completion) :
+                        _uri(uri), _timeout(timeout)
 {
+    _completion = completion;
+    //_completion = new URLRequestFunctor<URLRequestCompletion>(completion);
+    _operation = nil;
     _queue = [[NSOperationQueue alloc] init];
     
     _platform_request = [[NSMutableURLRequest alloc] initWithURL:(NSURL *)CFURLRef(_uri)
@@ -193,14 +195,22 @@ URLRequest::URLRequest(BasicUri const& uri, std::string const& method, const dou
 
 URLRequest::~URLRequest()
 {
+    LogDebug("%s", __PRETTY_FUNCTION__);
+
     [_queue release];
     [_platform_request release];
     [_operation release];
+    //delete _completion;
 }
 
-URLRequest::URLRequest(const URLRequest & request) : _uri(request._uri), _timeout(request._timeout), _completion(request._completion)
+URLRequest::URLRequest(const URLRequest & request) : _uri(request._uri), _timeout(request._timeout) //, _completion(request._completion)
 {
-    std::cout << "Copying Request..." << std::endl;
+    LogDebug("Copying Request...");
+    
+    _completion = request._completion;
+    _queue = [request._queue retain];
+    _platform_request = [request._platform_request retain];
+    _operation = [request._operation retain];
 }
 
 //URLRequest & URLRequest::operator=(const URLRequest & request)
@@ -213,21 +223,27 @@ URLRequest::URLRequest(const URLRequest & request) : _uri(request._uri), _timeou
 
 void URLRequest::CallCompletion(int status, const Json::Value & root)
 {
+    LogDebug("%s", __PRETTY_FUNCTION__);
     _completion(status, root);
 }
 
 void URLRequest::Start()
 {
+    LogDebug("%s", __PRETTY_FUNCTION__);
+    
+    CFRunLoopRef runLoop = CFRunLoopGetCurrent();
     _operation = [[__URLRequestOperation alloc] initWithURLRequest:_platform_request inQueue:_queue withCompletion:^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
         auto stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        Json::Reader reader(Json::Features::all());
         
         std::string document([stringData UTF8String]);
-        Json::Value root;
         
+        Json::Value root;
+        Json::Reader reader(Json::Features::all());
         reader.parse(document, root);
         
-        this->CallCompletion([response statusCode], root);
+        CFRunLoopPerformBlock(runLoop, kCFRunLoopCommonModes, ^{
+            this->CallCompletion([response statusCode], root);
+        });
         
         [stringData release];
     }];
